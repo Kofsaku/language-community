@@ -11,9 +11,10 @@ const LIMIT = 10;
 export async function getServerSideProps(context) {
   const postsQuery = firestore
     .collectionGroup('posts')
+    .where('published', '==', true)
     .orderBy('createdAt', 'desc')
     .limit(LIMIT);
-    // .where('published', '==', true)
+
 
   const posts = (await postsQuery.get()).docs.map(postToJSON);
 
@@ -55,7 +56,9 @@ export default function Home(props) {
   };
 
   return (
-    <main>
+    <div className="field">
+    <main >
+
       <Metatags title="Home Page" description="Get the latest posts on our site" />
 
       <div className="card card-info">
@@ -71,6 +74,11 @@ export default function Home(props) {
       <Loader show={loading} />
 
       {postsEnd && 'You have reached the end!'}
+      <div className="move">
+        <div className="item shake"></div>
+      </div>
     </main>
+    </div>
+
   );
 }
