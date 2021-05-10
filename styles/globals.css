@@ -16,9 +16,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Noto Sans', sans-serif;
-  background-image: linear-gradient(
-                    to right, rgb(236, 163, 67) 0%,
-                    rgb(112, 88, 248) 100%);
+  background-color: whitesmoke;
   color: var(--color-text);
   margin-top: 50px;
 }
@@ -166,7 +164,7 @@ button.btn-google {
 button.btn-logo {
   background-color: var(--color-text);
   color: white;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
 }
@@ -174,15 +172,19 @@ button.btn-logo {
 /* Cards */
 
 .card {
+
+  /* max-width: 500px;
+  display: inline-block; */
+  overflow: auto;
   padding: 2rem;
-  margin: 1rem 0;
+  margin: 1rem 1rem;
   background-color: white;
   background: rgba( 255, 255, 255, 0.30 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 0.0px );
--webkit-backdrop-filter: blur( 0.0px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 0.0px );
+  -webkit-backdrop-filter: blur( 0.0px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .card footer {
@@ -200,6 +202,9 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 .card-info {
   color: white;
   background: var(--color-blue);
+}
+.pro-card {
+  width:300px;
 }
 
 /* Loader */

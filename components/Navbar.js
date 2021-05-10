@@ -20,16 +20,19 @@ export default function Navbar() {
       <ul>
         <li>
           <Link href="/">
-            <button className="btn-logo">NXT</button>
+            <button className="btn-logo">palmates</button>
           </Link>
         </li>
+        
 
         {/* user is signed-in and has username */}
         {username && (
           <>
+
             <li className="push-left">
               <button onClick={signOut}>Sign Out</button>
             </li>
+
             <li>
               <Link href="/admin">
                 <button className="btn-blue">Write Posts</button>

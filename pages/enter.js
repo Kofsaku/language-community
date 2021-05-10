@@ -71,7 +71,7 @@ function UsernameForm() {
     const re = /^(?=[a-zA-Z0-9._]{3,15}$)(?!.*[_.]{2})[^_.].*[^_.]$/;
 
     // Only set form value if length is < 3 OR it passes regex
-    if (val.length < 3) {
+    if (val.length < 10) {
       setFormValue(val);
       setLoading(false);
       setIsValid(false);
@@ -110,7 +110,7 @@ function UsernameForm() {
       <section>
         <h3>Choose Username</h3>
         <form onSubmit={onSubmit}>
-          <input name="username" placeholder="myname" value={formValue} onChange={onChange} />
+          <input name="username" placeholder="ニックネームを入力してください。" value={formValue} onChange={onChange} />
           <UsernameMessage username={formValue} isValid={isValid} loading={loading} />
           <button type="submit" className="btn-green" disabled={!isValid}>
             Choose

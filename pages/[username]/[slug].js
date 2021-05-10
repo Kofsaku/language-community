@@ -62,14 +62,14 @@ export default function Post(props) {
   return (
     <main className={styles.container}>
       <Metatags title={post.title} description={post.title} />
-      
+
       <section>
         <PostContent post={post} />
       </section>
 
       <aside className="card">
         <p>
-          <strong>{post.heartCount || 0} 🤍</strong>
+          <strong>{post.heartCount || 0} 💗</strong>
         </p>
 
         <AuthCheck

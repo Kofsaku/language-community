@@ -33,8 +33,6 @@ export default function Home(props) {
   const getMorePosts = async () => {
     setLoading(true);
     const last = posts[posts.length -1 ];
-    console.log("これはlast")
-    console.log(last)
 
     const cursor = typeof last.createdAt === 'number' ? fromMillis(last.createdAt) : last.createdAt;
 
@@ -62,9 +60,9 @@ export default function Home(props) {
       <Metatags title="Home Page" description="Get the latest posts on our site" />
 
       <div className="card card-info">
-        <h2>💡 Next.js + Firebase - The Full Course</h2>
-        <p>Welcome! This app is built with Next.js and Firebase and is loosely inspired by Dev.to.</p>
-        <p>Sign up for an 👨‍🎤 account, ✍️ write posts, then 💞 heart content created by other users. All public content is server-rendered and search-engine optimized.</p>
+        <h2>💡 Palmatesへようこそ</h2>
+        <p>Palmatesは語学に関する知見を共有するために生まれました。</p>
+        <p>Pal-友人やMates-仲間がPalmateのように語学という共通点から世界に広がっていって欲しいという意味が込められています。</p>
       </div>
 
       <PostFeed posts={posts} />

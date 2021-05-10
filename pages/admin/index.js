@@ -15,8 +15,8 @@ export default function AdminPostsPage(props) {
   return (
     <main>
       <AuthCheck>
-        <PostList />
         <CreateNewPost />
+        <PostList />
       </AuthCheck>
     </main>
   );
@@ -24,7 +24,7 @@ export default function AdminPostsPage(props) {
 
 function PostList() {
   const ref = firestore.collection('users').doc(auth.currentUser.uid).collection('posts');
-  const query = ref.orderBy('createdAt');
+  const query = ref.orderBy('createdAt', 'desc')
   const [querySnapshot] = useCollection(query);
 
   const posts = querySnapshot?.docs.map((doc) => doc.data());
@@ -43,7 +43,8 @@ function CreateNewPost() {
   const [title, setTitle] = useState('');
 
   // Ensure slug is URL safe
-  const slug = encodeURI(kebabCase(title));
+  const url = encodeURI(kebabCase(title));
+  const slug = decodeURI(url)
 
   // Validate length
   const isValid = title.length > 3 && title.length < 100;
@@ -80,7 +81,7 @@ function CreateNewPost() {
       <input
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        placeholder="My Awesome Article!"
+        placeholder="タイトルを入力してください。"
         className={styles.input}
       />
       <p>

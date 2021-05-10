@@ -7,6 +7,9 @@ export default function Heart({ postRef }) {
   const heartRef = postRef.collection('hearts').doc(auth.currentUser.uid);
   const [heartDoc] = useDocument(heartRef);
 
+  console.log(heartRef)
+  console.log(heartDoc)
+
   // Create a user-to-post relationship
   const addHeart = async () => {
     const uid = auth.currentUser.uid;

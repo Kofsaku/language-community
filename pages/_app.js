@@ -1,5 +1,5 @@
 import '@styles/globals.css';
-import '@styles/globals.sass';
+// import '@styles/globals.sass';
 import Navbar from '@components/Navbar';
 import { UserContext } from '@lib/context';
 import { useUserData } from '@lib/hooks';
