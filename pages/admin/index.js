@@ -62,7 +62,7 @@ function CreateNewPost() {
       uid,
       username,
       published: false,
-      content: '![alt](https://firebasestorage.googleapis.com/v0/b/palmates-81837.appspot.com/o/uploads%2Fuvj0rdbQTeXjOPuFqnTZ4xjHK2P2%2F1621402565115.png?alt=media&token=dc65e471-c4e2-4f3d-984f-33d8de91124e)',
+      content: '# hello world!',
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),
       heartCount: 0,
